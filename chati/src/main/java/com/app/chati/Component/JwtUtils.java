@@ -25,7 +25,7 @@ public class JwtUtils {
         Key key = getSigningKey();
 
         return Jwts.builder()
-                .subject("user@example.com")
+                .subject(email)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + 2000000))
                 .signWith(key)
