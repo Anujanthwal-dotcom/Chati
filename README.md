@@ -6,16 +6,12 @@ Chati is a full-stack real-time chat application built with a modern tech stack.
 
 ## 🚀 Features
 
-* Real-time messaging between users
 * JWT-based authentication system
 * Secure API access via Spring Security
 * RESTful API architecture
 * Scalable MongoDB integration
 * Beautiful UI with Tailwind CSS and MUI
 * State management with Redux + Thunk
-* Animated UI with Framer Motion
-* Role-based access control
-* Mobile-first, responsive design
 
 ---
 ## 🛠️ Tech Stack
