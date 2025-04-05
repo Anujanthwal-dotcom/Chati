@@ -18,29 +18,27 @@ Chati is a full-stack real-time chat application built with a modern tech stack.
 * Mobile-first, responsive design
 
 ---
-
 ## 🛠️ Tech Stack
 
-**Frontend:**
+### 🎨 Frontend
+- **React** `19.0.0`
+- **Redux** & **Redux Thunk**
+- **Tailwind CSS** `4.1.2`
+- **Material UI (MUI)** `7.0.1`
+- **Emotion (React + Styled)** `11.14.0`
+- **Framer Motion** `12.6.3`
+- **Axios** `1.8.4`
+- **React Icons** `5.5.0`
+- **Lucide React** `0.487.0`
+- **React Router DOM** `7.4.1`
 
-* React ^19.0.0
-* Redux & Redux Thunk
-* Tailwind CSS ^4.1.2
-* MUI (Material UI) ^7.0.1
-* Emotion (React + Styled) ^11.14.0
-* Framer Motion ^12.6.3
-* Axios ^1.8.4
-* React Icons ^5.5.0
-* Lucide React ^0.487.0
-* React Router DOM ^7.4.1
+### ⚙️ Backend
+- **Spring Boot** (Java 21)
+- **Spring Security**
+- **JWT Authentication**
+- **MongoDB**
+- **RESTful API Design**
 
-**Backend:**
-
-* Spring Boot (Java 21)
-* Spring Security
-* JWT (JSON Web Tokens)
-* MongoDB
-* RESTful APIs
 
 ---
 
