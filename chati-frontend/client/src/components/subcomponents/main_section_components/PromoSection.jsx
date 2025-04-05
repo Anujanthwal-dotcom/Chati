@@ -1,12 +1,12 @@
 import React from 'react';
 
-function MainSection() {
+function PromoSection() {
     return (
-        <div className="bg-[#2A2B32] text-white flex-1 p-6 flex items-center justify-center border-l border-gray-800 w-full rounded-md">
+        <div className="bg-[#2A2B32] text-white flex-1 p-3 flex items-center justify-center w-[70%] rounded-md">
 
             {/* Promotional Text */}
             <div className="text-center space-y-4">
-                <h1 className="text-3xl font-bold">Welcome to Chat-I</h1>
+                <h1 className="text-3xl font-bold">Welcome to Chati</h1>
                 <p className="text-gray-400 text-lg max-w-xl mx-auto">
                     The Ultimate Messaging Platform. Connect, Communicate, and Collaborate with ease. Enjoy real-time messaging with a clean and minimalistic interface.
                 </p>
@@ -15,4 +15,4 @@ function MainSection() {
     );
 }
 
-export default MainSection;
+export default PromoSection;

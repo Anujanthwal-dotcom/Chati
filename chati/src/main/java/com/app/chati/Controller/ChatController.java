@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 public class ChatController {
 
@@ -65,6 +66,42 @@ public class ChatController {
             throw new RuntimeException("Chat not found");
         }
         return new ResponseEntity<>(chat,HttpStatus.OK);
+    }
+
+    @GetMapping("/chat/single/findAll")
+    public ResponseEntity<List<Chat>> findAllSingleChatsHandler(@RequestHeader("Authorization") String token){
+
+        Users user = userMainService.findUserByJwt(token);
+        if(user!=null){
+            List<Chat> chats = chatService.findSingleChatsByUserId(user.getId());
+
+            if(chats!=null){
+                return new ResponseEntity<>(chats,HttpStatus.OK);
+            }
+
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/chat/group/findAll")
+    public ResponseEntity<List<Chat>> findAllGroupChatsHandler(@RequestHeader("Authorization") String token){
+
+        Users user = userMainService.findUserByJwt(token);
+        if(user!=null){
+            List<Chat> chats = chatService.findGroupChatsByUserId(user.getId());
+
+            if(chats!=null){
+                return new ResponseEntity<>(chats,HttpStatus.OK);
+            }
+
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
     }
 
 

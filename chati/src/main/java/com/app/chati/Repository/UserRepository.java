@@ -15,6 +15,6 @@ public interface UserRepository extends MongoRepository<Users, ObjectId> {
     Users findByUsername(String username);
 
     //just testing. May need to change later
-    @Query("{'username': {$regex: :query, $options: 'i'}}")
+    @Query("{ 'username': { $regex: ?0, $options: 'i' } }")
     List<Users> searchUsers(String query);
 }

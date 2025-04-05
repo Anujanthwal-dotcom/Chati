@@ -14,4 +14,11 @@ public interface ChatRepository extends MongoRepository<Chat,ObjectId> {
 
     @Query("{ 'is_group': false, 'users': { $all: [?0, ?1] } }")
     Chat findSingleChatByUserId(ObjectId userId1, ObjectId userId2);
+
+    @Query("{ 'is_group': false, 'users': ?0 }")
+    List<Chat> findSingleChatsByUserId(ObjectId userId);
+
+    @Query("{ 'is_group': true, 'users': ?0 }")
+    List<Chat> findGroupChatsByUserId(ObjectId userId);
+
 }

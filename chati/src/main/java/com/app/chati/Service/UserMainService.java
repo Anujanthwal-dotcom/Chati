@@ -42,10 +42,11 @@ public class UserMainService {
             registerResponse.setMessage("User registered");
             registerResponse.setStatus(true);
             registerResponse.setToken(jwtService.generateToken(user.getUsername()));
+            registerResponse.setUsername(user.getUsername());
             return registerResponse;
         }
         else{
-            return new RegisterResponse("User not registered",false,null);
+            return new RegisterResponse(user.getUsername(),"User not registered",false,null);
         }
     }
 
@@ -57,10 +58,11 @@ public class UserMainService {
             loginResponse.setMessage("User logged in");
             loginResponse.setStatus(true);
             loginResponse.setToken(jwtService.generateToken(user.getUsername()));
+            loginResponse.setUsername(user.getUsername());
             return loginResponse;
         }
         else{
-            return new LoginResponse("User not Logged in",false,null);
+            return new LoginResponse(user.getUsername(),"User not Logged in",false,null);
         }
     }
 
@@ -126,9 +128,8 @@ public class UserMainService {
     }
 
     public List<Users> searchUsers(String query){
-        List<Users> user_list = userRepository.searchUsers(query);
 
-        return user_list;
+        return userRepository.searchUsers(query);
     }
 
 }

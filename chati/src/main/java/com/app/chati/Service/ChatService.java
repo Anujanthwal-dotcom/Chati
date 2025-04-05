@@ -178,4 +178,13 @@ public class ChatService {
        }
     }
 
+    public List<Chat> findSingleChatsByUserId(ObjectId id) {
+
+        return chatRepository.findSingleChatsByUserId(id);
+    }
+
+    public List<Chat> findGroupChatsByUserId(ObjectId id){
+
+        return chatRepository.findGroupChatsByUserId(id);
+    }
 }

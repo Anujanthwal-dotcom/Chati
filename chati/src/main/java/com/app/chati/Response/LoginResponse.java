@@ -11,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginResponse {
+    private String username;
     private String message;
     private boolean status;
     private String token;

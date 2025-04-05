@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 public class UserController {
 
@@ -77,11 +78,14 @@ public class UserController {
         return new ResponseEntity<>(user_list,HttpStatus.OK);
     }
 
-    @PostMapping("/update/{username}")
-    public ResponseEntity<ApiResponse> updateUserHandler(@PathVariable("username") String username,
+    @PostMapping("/update")
+    public ResponseEntity<ApiResponse> updateUserHandler(@RequestHeader("Authorization") String token,
                                                          @RequestBody UpdateUserRequest req
     ){
-        Users user = userMainService.updateUser(username,req);
+        Users user = userMainService.findUserByJwt(token);
+
+
+        Users res_user = userMainService.updateUser(user.getUsername(),req);
 
         if(user!=null){
             return new ResponseEntity<>(new ApiResponse("User updated",true),HttpStatus.OK);
