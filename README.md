@@ -116,16 +116,7 @@ Chati/
 └── README.md
 ```
 
----
 
-## 📸 Screenshots
-
-> Add screenshots or GIFs below to showcase the UI:
->
-> ![Login Page](p1.png)
-> ![Chat Interface](p2.png)
-
----
 
 ## 👍 Contributing
 
